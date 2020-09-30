@@ -93,10 +93,14 @@ class Canvas:
         tkinter_window.withdraw()
 
         available_formats = [("Portable Network Graphics", "*.png")]
-        filename = asksaveasfilename(title="Export File", filetypes=available_formats)
+        filename = asksaveasfilename(
+            title="Export File", filetypes=available_formats)
 
         if filename:
-            name = filename[:-3]
+            if(filename[-4:] == '.png'):
+                name = filename[:-4]
+            else:
+                name = filename[:]
             return name
 
     def clean_all_layers(self):
