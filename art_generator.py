@@ -96,7 +96,7 @@ class Canvas:
         filename = asksaveasfilename(title="Export File", filetypes=available_formats)
 
         if filename:
-            name = filename[:]
+            name = filename[:-3]
             return name
 
     def clean_all_layers(self):
